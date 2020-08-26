@@ -3,6 +3,13 @@ import React from 'react';
 
 export default function Header() {
     return (
-        <div> Hello world from Header! </div>
+        <header>
+	    <nav>
+	    	List navigation on 2 pages:
+	    		- Main page
+	    		- Contact
+	    </nav>
+	    Hello world from Header! 
+	</header>
     );
 }
