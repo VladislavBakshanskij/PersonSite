@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Header() {
     return (
         <header>
 	    <nav>
 	    	List navigation on 2 pages:
-	    		- <Link to="/">Main page</Link>
-	    		- <Link to="/contact">Contact</Link>
+	    		- <NavLink to="/" activeClassName="active" >Main page</NavLink>
+	    		- <NavLink to="/contact" activeClassName="active">Contact</NavLink>
 	    </nav>
 	    Hello world from Header! 
 	</header>
