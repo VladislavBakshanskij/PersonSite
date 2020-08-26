@@ -45,7 +45,7 @@ export default function Footer() {
 					);
 				})
 			}
-	    	<ul>
+	    	</ul>
 	    	<div class="speacial-text">
 	    		My email: <span class="email">mail@mail.com</span>
 	    	</div>
