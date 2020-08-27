@@ -46,12 +46,16 @@ export default function App() {
 
 	const myPhoto = `${process.env.PUBLIC_URL}/static/1.jpeg`;
 
+	if (window.innerWidth <= 600) {
+		var isPhone = true;
+	}
+
 	return (
 		<Router>
 			<Header />
 				<Switch>
 					<Route path="/contact" component={() => <Contact />} />
-					<Route exact path="/" component={() => <Content imgSrc={myPhoto} />} />
+					<Route exact path="/" component={() => <Content imgSrc={myPhoto} isPhone={isPhone} />} />
 					<Route component={() => <NotFound />} />
 				</Switch>
 			<Footer socialsLinks={socialsLinks} email="vbakshanskij2000@gmail.com" />
