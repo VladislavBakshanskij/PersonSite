@@ -4,6 +4,7 @@ import './Footer.css';
 /**
  *	Component for footer on my site
  *	render contact information
+ *  @param { socialsLinks } props
  */
 export default function Footer(props) {
 	let socialsLinks = props.socialsLinks;

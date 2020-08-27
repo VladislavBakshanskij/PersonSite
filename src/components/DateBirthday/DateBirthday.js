@@ -2,9 +2,13 @@ import React from 'react';
 
 
 /**
- * Component for calculate both
+ * Calculator and ticker date birthday
  */
 export default class DateBirthday extends React.Component {
+    /**
+     * 
+     * @param { dateBirthday } props 
+     */
     constructor(props) {
         super(props);
         this.state = { 
@@ -12,6 +16,9 @@ export default class DateBirthday extends React.Component {
         };
     }
 
+    /**
+     * function for calculate age
+     */
     calculate() {
         let now = Date.now();
         let diff = now - this.state.dateBirthday;

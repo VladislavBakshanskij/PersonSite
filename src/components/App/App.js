@@ -9,10 +9,11 @@ import {
 	Switch,
 	Route,
 } from 'react-router-dom';
+import NotFound from '../NotFound/NotFound';
 
 /**
  * Main component
- * Render all Site
+ * Render all component for Site
  */
 export default function App() {
 	const socialsLinks = [
@@ -43,12 +44,15 @@ export default function App() {
 		}
 	];
 
+	console.log(`${process.env.PUBLIC_URL}/static/1.jpeg`);
+
 	return (
 		<Router>
 			<Header />
 				<Switch>
 					<Route path="/contact" component={() => <Contact />} />
-					<Route expact path="/" component={() => <Content />} />
+					<Route exact path="/" component={() => <Content />} />
+					<Route component={() => <NotFound />} />
 				</Switch>
 			<Footer socialsLinks={socialsLinks} email="vbakshanskij2000@gmail.com" />
 		</Router>

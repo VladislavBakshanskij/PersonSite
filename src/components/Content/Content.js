@@ -8,21 +8,29 @@ import Section from '../Section/Section';
  */
 export default function Content() {
     return (
-        <main>
+        <main class="main">
             <div className="container">
-                <Section title="О себе">
-                    Привет! Меня зовут Бакшанский Владислав Дмитриевич, мне {<DateBirthday dateBirthday="2000-10-03T15:00:00" />}.
-                    С 2019 я начал свой путь в айти сфере, 
-                </Section>
-                <Section title="Мои проекты">
-                    Projects links
-                </Section>
-                <Section title="Навыки">
-                    Skills
-                </Section>
-                <Section title="Прошлые места работы">
-                    Works list
-                </Section>
+                <div className="container">
+                    <Section title="О себе">
+                        Привет! Меня зовут Бакшанский Владислав Дмитриевич, мне {<DateBirthday dateBirthday="2000-10-03T15:00:00" />}.
+                        С 2019 я начал свой путь в айти сфере, 
+                    </Section>
+                </div>
+                <div className="container">
+                    <Section title="Мои проекты">
+                        Projects links
+                    </Section>
+                </div>
+                <div className="container">
+                    <Section title="Навыки">
+                        Skills
+                    </Section>
+                </div>
+                <div className="container">
+                    <Section title="Прошлые места работы">
+                        Works list
+                    </Section>
+                </div>
             </div>
         </main>
     );
