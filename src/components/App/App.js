@@ -19,39 +19,39 @@ export default function App() {
 	const socialsLinks = [
 		{
 			id: 1,
-			link: "",
+			link: "https://www.linkedin.com/in/vladislav-bakshanskij-02aa161b3",
 			name: "LinkedIn"
 		}, {
 			id: 3,
-			link: "",
+			link: "https://twitter.com/vladbakshanskij",
 			name: "Twitter"
 		}, {
 			id: 4,
-			link: "",
+			link: "https://www.instagram.com/__vlad_bk__/",
 			name: "Instagram"
 		}, {
 			id: 5,
-			link: "",
+			link: "https://vk.com/swap101",
 			name: "Vk"
 		}, {
 			id: 6,
-			link: "",
+			link: "https://t.me/vladBakshanskij",
 			name: "Telegram"
 		}, {
 			id: 7,
-			link: "",
+			link: "https://github.com/vladislavBakshanskij",
 			name: "GitHub"
 		}
 	];
 
-	console.log(`${process.env.PUBLIC_URL}/static/1.jpeg`);
+	const myPhoto = `${process.env.PUBLIC_URL}/static/1.jpeg`;
 
 	return (
 		<Router>
 			<Header />
 				<Switch>
 					<Route path="/contact" component={() => <Contact />} />
-					<Route exact path="/" component={() => <Content />} />
+					<Route exact path="/" component={() => <Content imgSrc={myPhoto} />} />
 					<Route component={() => <NotFound />} />
 				</Switch>
 			<Footer socialsLinks={socialsLinks} email="vbakshanskij2000@gmail.com" />

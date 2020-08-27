@@ -1,7 +1,10 @@
 import React from 'react';
 
-
-export default function Contact() {
+/**
+ * Component for page contact with me
+ * @param { contactLinks, style } props 
+ */
+export default function Contact(props) {
 	return (
 		<main>
 			<div className="container">hello world!</div>

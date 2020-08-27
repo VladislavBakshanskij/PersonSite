@@ -14,9 +14,9 @@ export default function Footer(props) {
 			<div className="container">
 				<ul className="list-inline">
 					{
-						socialsLinks.map((link, index) => {
+						socialsLinks.map((link) => {
 							return (
-								<li key={index} className="list-inline-item">
+								<li key={link.id.toString()} className="list-inline-item">
 									<div>
 										<a href={`${link.link === "" ? "#!" : link.link}`} className="text-light">{link.name}</a>
 									</div>
