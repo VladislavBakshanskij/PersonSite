@@ -1,0 +1,5 @@
+TODO:
+	- Fit content section
+	- Add project
+	- Add skills
+	- Add tech

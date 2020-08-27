@@ -13,10 +13,11 @@ export default function Content(props) {
         <main className="main">
             <div className="container">
                 <div className="container">
-                    <Section title="О себе" wdith="100%">
+                    <Section title="О себе" width="100%">
                         <img src={first} alt="Picture with me" width="100%"/>
-                        Привет! Меня зовут Бакшанский Владислав Дмитриевич, мне {<DateBirthday dateBirthday="2000-10-03T15:00:00" />}.
-                        С 2019 я начал свой путь в айти сфере, 
+                        Привет! Меня зовут Бакшанский Владислав Дмитриевич, мне {<DateBirthday dateBirthday="2000-10-03T15:00:00" />} и я программист.
+                        Моя первая работа в IT-сфере была контент менеджером в универе.
+                        По сути ухода за сайтом я дорабатывал функционал и добавлял фичи как на PHP, так и на JS.
                     </Section>
                 </div>
                 <div className="container">
