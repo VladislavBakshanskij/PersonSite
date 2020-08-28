@@ -14,7 +14,7 @@ export default function List(props) {
                         key={index.toString()}
                         value={
                             item.href !== undefined ? <div>
-                                <a to={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
+                                <a href={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
                                     {item.title}
                                 </a>
                                 {
