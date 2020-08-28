@@ -6,6 +6,11 @@ export default function ProjectList() {
         <List
             style={{
                 fontSize: '1.05em',
+                width: 'fit-content',
+                textAlign: 'center',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                fontFamily: 'Montserrat, sans-serif'
             }}
 
             data={[

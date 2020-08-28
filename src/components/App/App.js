@@ -18,22 +18,44 @@ import ProjectList from '../ProjectList/ProjectList';
  * Main component
  * Render all component for Site
  */
-export default function App() {
-	const myPhoto = `${process.env.PUBLIC_URL}/static/1.jpeg`;
-	var isPhone = window.innerWidth <= 600;
+export default class App extends React.Component {
+	constructor(props) {
+		super(props);
+		const myPhoto = `${process.env.PUBLIC_URL}/static/1.jpeg`;
+		var isPhone = window.innerWidth <= 600;
+		this.state = {
+			myPhoto: myPhoto,
+			isPhone: isPhone
+		};
+	}
 
-	return (
-		<Router>
-			<Header />
+	onCheckPhone() {
+		var isPhone = window.innerWidth <= 600;
+		this.setState({ isPhone: isPhone });
+	}
+
+	componentDidMount() {
+		this.interval = setInterval(() => this.onCheckPhone(), 1000);
+	}
+
+	componentWillMount() {
+		this.onCheckPhone();
+	}
+
+	render() {
+		return (
+			<Router>
+				<Header />
 				<Switch>
-					<Route path="/contact" component={() => <Contact />} />
-					<Route path="/project/:projectName/" component={Project}/>
-					<Route path="/projects/" component={() => <ProjectList />}/>
-					<Route exact path="/" component={() => <Main imgSrc={myPhoto} isPhone={isPhone} />} />
+					<Route path="/contact" component={() => <Contact contactLinks={Config.SOCIALLINKS} />} />
+					<Route path="/project/:projectName/" component={Project} />
+					<Route path="/projects/" component={() => <ProjectList />} />
+					<Route exact path="/" component={() => <Main imgSrc={this.state.myPhoto} isPhone={this.state.isPhone} />} />
 					<Route component={() => <NotFound />} />
 				</Switch>
-			<Footer socialsLinks={Config.SOCIALLINKS} email={Config.EMAIL}/>
-		</Router>
-	);
+				<Footer socialsLinks={Config.SOCIALLINKS} email={Config.EMAIL} />
+			</Router>
+		);
+	}
 }
 

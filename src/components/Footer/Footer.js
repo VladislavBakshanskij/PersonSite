@@ -10,7 +10,9 @@ export default function Footer(props) {
 	let socialsLinks = props.socialsLinks;
 	
 	return (
-		<footer id="sticky-footer" className="py-4 bg-dark text-white-50 border-radius-up">
+		<footer id="sticky-footer" className="py-4 text-white-50 border-radius-up" style={{
+			
+		}}>
 			<div className="container text-center">
 				<ul className="list-inline">
 					{

@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom';
  */
 export default function List(props) {
     return (
-        <ul className="list-group" style={props.style}>
+        <ul className={`list-group ${props.className ?? ""}`} style={props.style}>
             {
                 props.data.map((item, index) => {
                     return <ListItem

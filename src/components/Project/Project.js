@@ -99,7 +99,7 @@ export default class Project extends React.Component {
                             <div className="card-text" style={style}>
                                 <List data={data.tech} style={{
                                     width: 'fit-content',
-                                    textAlign: 'rigth'
+                                    textAlign: 'Right'
                                 }}/>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ export default class Project extends React.Component {
                             <div className="card-text" style={style}>
                                 <List data={data.task} style={{
                                     width: 'fit-content',
-                                    textAlign: 'rigth'
+                                    textAlign: 'Right'
                                 }}/>
                             </div>
                         </div>

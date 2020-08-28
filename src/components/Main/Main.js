@@ -50,7 +50,7 @@ export default function Main(props) {
                             );
                         }
 
-                        const sectionContentRigth = (title, content, width, stuffContent) => {
+                        const sectionContentRight = (title, content, width, stuffContent) => {
                             return (
                                 <div className="row">
                                     <div className="col">
@@ -89,7 +89,7 @@ export default function Main(props) {
                                         <div className="row">
                                             {
                                                 isLeftContent ?
-                                                    sectionContentRigth(
+                                                    sectionContentRight(
                                                         section.title,
                                                         section.content,
                                                         width,
