@@ -4,6 +4,7 @@ import first from '../../static/img/first.jpeg';
 import Config from '../Config/Config';
 import Card from '../Card/Card';
 import List from '../List/List';
+import { NavLink } from 'react-router-dom';
 
 
 /**
@@ -75,7 +76,7 @@ export default function Main(props) {
                                         <div className="row">
                                             <div className="col-12">
                                                 <section className="card border-light section mb-3 shadow__hover shadow-lg" style={{ borderRadius: "10px" }}>
-                                                    <h2 className="section__title">{section.title === "Мои проекты" ? <a href="/projects" style={{color: 'gray'}}>{section.title}</a> : section.title}</h2>
+                                                    <h2 className="section__title">{section.title === "Мои проекты" ? <NavLink to="/projects" style={{color: 'gray'}}>{section.title}</NavLink> : section.title}</h2>
                                                     {isFirst ? <img src={first} alt="Picture with me" style={style} /> : ""}
                                                     <div className="card-body">
                                                         <div className="card-text section__body">
