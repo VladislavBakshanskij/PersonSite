@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../Section/Section';
-import first from '../../static/first.jpeg';
+import first from '../../static/img/first.jpeg';
 import Config from '../Config/Config';
 import Card from '../Card/Card';
 import List from '../List/List';
@@ -13,7 +13,6 @@ import List from '../List/List';
  */
 export default function Main(props) {
     const isPhone = props.isPhone;
-    var Width;
 
     return (
         <main className="main">
@@ -27,7 +26,6 @@ export default function Main(props) {
                             borderRadius: 10,
                             width: isPhone ? '90%' : "80%"
                         };
-                        Width = width;
 
                         if (isPhone) {
                             style.marginLeft = 'auto';

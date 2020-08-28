@@ -25,7 +25,7 @@ export default function ProjectList() {
                     id: 2,
                     title: 'Сайт-открытка на день рождение',
                     href: 'https://cuteinpocket.herokuapp.com/',
-                    tech: 'Технологии: Python, Django, HTML, CSS, JS, Bootsrap, jQuery, Git',
+                    tech: 'Технологии: Python, Django, HTML, CSS, JS, Bootstrap, jQuery, Git',
                     name: 'CIP'
                 }, {
                     id: 3,
@@ -43,7 +43,7 @@ export default function ProjectList() {
                     id: 5,
                     title: 'Страница для выбора направления абитуриентов',
                     href: 'https://kubsau.ru/ab-list/',
-                    tech: 'Технологии: PHP, HTML, CSS, JS, Ajax, Bootsrap, jQuery, 1C-bitrix',
+                    tech: 'Технологии: PHP, HTML, CSS, JS, Ajax, Bootstrap, jQuery, 1C-bitrix',
                     name: 'ab-list'
                 }, {
                     id: 6,
@@ -57,6 +57,12 @@ export default function ProjectList() {
                     href: 'https://colab.research.google.com/drive/1nRSz4VVhms6cWkQiUv60TPHyVQCKVSMI?usp=sharing',
                     tech: 'Технологии: Python, Tensorflow, Pandas, Numpy, Keras',
                     name: 'COVID-19'
+                }, {
+                    id: 8,
+                    title: 'Персональный сайт',
+                    href: '/',
+                    tech: 'Технологии: JS, CSS, Bootstrap, React, Git',
+                    name: 'personSite'
                 }
             ]}
         />

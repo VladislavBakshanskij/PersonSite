@@ -1,7 +1,6 @@
 import React from 'react';
 import DateBirthday from '../DateBirthday/DateBirthday';
 import ProjectList from '../ProjectList/ProjectList';
-import List from '../List/List';
 
 
 export default {

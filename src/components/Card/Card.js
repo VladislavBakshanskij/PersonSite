@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.css';
 
 /**
- * Bootsrap card template component
+ * Bootstrap card template component
  * @param {title, content, width} props 
  */
 export default function Card(props) {

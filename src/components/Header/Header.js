@@ -17,10 +17,10 @@ export default function Header() {
 				<div className="collapse navbar-collapse" id="navbarNav">
 					<ul className="navbar-nav">
 						<li className="nav-item">
-							<NavLink to="/" activeClassName="active" className="nav-link">Main page</NavLink>
+							<NavLink exact to="/" activeClassName="active" className="nav-link">Главная страница</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink to="/contact" activeClassName="active" className="nav-link">Contact</NavLink>
+							<NavLink to="/contact" activeClassName="active" className="nav-link">Контакты</NavLink>
 						</li>
 					</ul>
 				</div>
