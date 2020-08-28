@@ -1,5 +1,7 @@
 import React from 'react';
 import DateBirthday from '../DateBirthday/DateBirthday';
+import ProjectList from '../ProjectList/ProjectList';
+import List from '../List/List';
 
 
 export default {
@@ -8,23 +10,14 @@ export default {
             id: 0,
             title: "О себе",
             width: "100%",
-            content: `
-                Привет! Меня зовут Бакшанский Владислав Дмитриевич, мне ${<DateBirthday dateBirthday="2000-10-03T15:00:00" />} и я программист.
-                Моя первая работа в IT-сфере была контент менеджером в универе.
-                По сути ухода за сайтом я дорабатывал функционал и добавлял фичи как на PHP, так и на JS.
-            `
+            content: <DateBirthday dateBirthday="2000-10-03T15:00:00" />
         }, {
             id: 1,
             title: "Мои проекты",
-            content: `Projects links`
-        }, {
-            id: 2,
-            title: "Навыки",
-            content: `Skills`
-        }, {
-            id: 3,
-            title: "Прошлые места работы",
-            content: `Works list`
+            content: `
+                Список моих проектов с технологиями, которые использовались во время их разработки.
+            `,
+            stuff: <ProjectList />
         }
     ],
     SOCIALLINKS: [

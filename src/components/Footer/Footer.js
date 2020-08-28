@@ -11,7 +11,7 @@ export default function Footer(props) {
 	
 	return (
 		<footer id="sticky-footer" className="py-4 bg-dark text-white-50 border-radius-up">
-			<div className="container" style={{height: '100%'}}>
+			<div className="container text-center">
 				<ul className="list-inline">
 					{
 						socialsLinks.map((link) => {

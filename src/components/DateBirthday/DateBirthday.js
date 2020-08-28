@@ -11,8 +11,8 @@ export default class DateBirthday extends React.Component {
      */
     constructor(props) {
         super(props);
-        this.state = { 
-            dateBirthday: new Date(props.dateBirthday) 
+        this.state = {
+            dateBirthday: new Date(props.dateBirthday)
         };
     }
 
@@ -25,7 +25,7 @@ export default class DateBirthday extends React.Component {
         let diffDate = new Date(diff);
         let age = diffDate.getUTCFullYear() - 1970;
 
-        this.setState({age: age});
+        this.setState({ age: age });
     }
 
     componentDidMount() {
@@ -42,7 +42,11 @@ export default class DateBirthday extends React.Component {
 
     render() {
         return (
-            <em>{this.state.age ?? "..."}</em>
+            <div>
+                Привет! Меня зовут Бакшанский Владислав Дмитриевич, мне <em>{this.state.age}</em>, и я программист.
+                Моя первая работа в IT-сфере была контент менеджером в универе.
+                По сути ухода за сайтом я дорабатывал функционал и добавлял фичи как на PHP, так и на JS.
+            </div>
         );
     }
 }

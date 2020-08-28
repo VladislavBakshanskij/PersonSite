@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
-import Content from '../Content/Content';
+import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 import Contact from '../Contact/Contact';
 import {
@@ -11,6 +11,8 @@ import {
 } from 'react-router-dom';
 import NotFound from '../NotFound/NotFound';
 import Config from '../Config/Config';
+import Project from '../Project/Project';
+import ProjectList from '../ProjectList/ProjectList';
 
 /**
  * Main component
@@ -18,17 +20,16 @@ import Config from '../Config/Config';
  */
 export default function App() {
 	const myPhoto = `${process.env.PUBLIC_URL}/static/1.jpeg`;
-
-	if (window.innerWidth <= 600) {
-		var isPhone = true;
-	}
+	var isPhone = window.innerWidth <= 600;
 
 	return (
 		<Router>
 			<Header />
 				<Switch>
 					<Route path="/contact" component={() => <Contact />} />
-					<Route exact path="/" component={() => <Content imgSrc={myPhoto} isPhone={isPhone} />} />
+					<Route path="/project/:projectName/" component={Project}/>
+					<Route path="/projects/" component={() => <ProjectList />}/>
+					<Route exact path="/" component={() => <Main imgSrc={myPhoto} isPhone={isPhone} />} />
 					<Route component={() => <NotFound />} />
 				</Switch>
 			<Footer socialsLinks={Config.SOCIALLINKS} email={Config.EMAIL}/>
