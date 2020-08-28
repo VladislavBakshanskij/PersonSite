@@ -1,6 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem/ListItem';
-
+import {NavLink} from 'react-router-dom';
 /**
  * list component
  * @param {data, style} props 
@@ -14,9 +14,9 @@ export default function List(props) {
                         key={index.toString()}
                         value={
                             item.href !== undefined ? <div>
-                                <a href={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
+                                <NavLink to={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
                                     {item.title}
-                                </a>
+                                </NavLink>
                                 {
                                     item.name ? 
                                         <a href={`/project/${item.name}`} >
