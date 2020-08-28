@@ -14,14 +14,14 @@ export default function List(props) {
                         key={index.toString()}
                         value={
                             item.href !== undefined ? <div>
-                                <NavLink to={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
+                                <a to={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
                                     {item.title}
-                                </NavLink>
+                                </a>
                                 {
                                     item.name ? 
-                                        <a href={`/project/${item.name}`} >
+                                        <NavLink to={`/project/${item.name}`} >
                                             <i className="fa fa-arrow-right" aria-hidden="true"></i>
-                                        </a> : ""
+                                        </NavLink> : ""
                                 }
                             </div> : item
                         }
