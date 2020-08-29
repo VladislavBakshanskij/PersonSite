@@ -17,6 +17,13 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "keywords": [
+    "Javascript",
+    "React",
+    "creat-react-app"
+  ],
+  "author": "Vladislav Bakshanskij <vbakshanskij2000@gmail.com>", 
+  "license": "ISC",
   "eslintConfig": {
     "extends": "react-app"
   },
