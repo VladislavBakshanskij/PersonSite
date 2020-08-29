@@ -1,30 +1,20 @@
 import React from 'react';
 import ListItem from './ListItem/ListItem';
-import {NavLink} from 'react-router-dom';
+
 /**
  * list component
- * @param {data, style} props 
+ * @param {data, style, styleItem} props
  */
 export default function List(props) {
     return (
-        <ul className={`list-group ${props.className ?? ""}`} style={props.style}>
+        <ul className={props.classNameList} style={props.style}>
             {
                 props.data.map((item, index) => {
                     return <ListItem
+                        classNameItem={props.classNameItem}
                         key={index.toString()}
-                        value={
-                            item.href !== undefined ? <div>
-                                <a href={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
-                                    {item.title}
-                                </a>
-                                {
-                                    item.name ? 
-                                        <NavLink to={`/project/${item.name}`} >
-                                            <i className="fa fa-arrow-right" aria-hidden="true"></i>
-                                        </NavLink> : ""
-                                }
-                            </div> : item
-                        }
+                        value={item}
+                        style={props.styleItem}
                     />
                 })
             }
