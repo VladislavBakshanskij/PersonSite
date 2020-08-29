@@ -22,7 +22,7 @@ export default class App extends React.Component {
 	constructor(props) {
 		super(props);
 		const myPhoto = `${process.env.PUBLIC_URL}/static/1.jpeg`;
-		var isPhone = window.innerWidth <= 600;
+		const isPhone = window.innerWidth <= 600;
 		this.state = {
 			myPhoto: myPhoto,
 			isPhone: isPhone
@@ -30,7 +30,7 @@ export default class App extends React.Component {
 	}
 
 	onCheckPhone() {
-		var isPhone = window.innerWidth <= 600;
+		const isPhone = window.innerWidth <= 600;
 		this.setState({ isPhone: isPhone });
 	}
 

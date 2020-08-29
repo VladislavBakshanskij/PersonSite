@@ -26,7 +26,7 @@ export default function Contact(props) {
 		GitHub: github,
 	};
 
-	const data = contactLinks.map((link) =>  <a href={`${link.link}`}>Я в <strong>{link.name}</strong> <img src={imgs[link.name]} alt={link.name} width="50"/></a>);
+	const data = contactLinks.map((link) =>  <a href={`${link.link}`}>Я в <img src={imgs[link.name]} alt={link.name} width="50"/></a>);
 
 	data.push(
 		(() => <a href={`mailto:${Config.EMAIL}`}>Моя рабочая почта <img src={gmail} alt="gmail" width="50"/></a>)()
