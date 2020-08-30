@@ -27,7 +27,8 @@ export default class Project extends React.Component {
                     desc: 'Система помощи и прогнозирования сельскохозяйственных решений, реализующая древовидную структуру и показывающая дерево решений.',
                     tech: ['C#', '.Net Framework', 'Windows Forms', 'WPF', 'Git'],
                     task: ['Реализиация модели', 'Вывод возможных альтернативных вариантов прогноза', 'Отрисовка дерева', 'Отрисовка эффертивной ветки', 'Вывод данных на дереве с периодом'],
-                    link: 'https://github.com/VladislavBakshanskij/CFAS'
+                    link: 'https://github.com/VladislavBakshanskij/CFAS',
+                    partners: ["Лада Дунская"]
                 },
                 'CIP': {
                     id: 2,
@@ -35,7 +36,8 @@ export default class Project extends React.Component {
                     desc: 'Поздравление дипломного руководителя с днем рождения.',
                     tech: ['Python', 'Django', 'Git', 'HTML', 'CSS', 'JS', 'Bootstrap', 'Google Sheets API', 'Google Drive API'],
                     task: ['Верстка страницы congratulation', 'Налаживание pipline для автоматического deploy на heroku'],
-                    link: 'https://cuteinpocket.herokuapp.com/'
+                    link: 'https://cuteinpocket.herokuapp.com/',
+                    partners: ["Лада Дунская"]
                 },
                 'Minecraft': {
                     id: 3,
@@ -74,7 +76,8 @@ export default class Project extends React.Component {
                     desc: 'Вы играете за кубик, разбивая стекла с получением очков. Ваш персонаж владеет замедлением временем по необходимости. Жанр игры аркада.',
                     tech: ['C#', 'Unity', 'Blender'],
                     task: ['Реализация генерации игрового мира', 'Реализация замедления времени', 'Объединение объектов в статический меш'],
-                    link: '#!'
+                    link: '#!',
+                    partners: ["Николай Накоркешко", "Радион Аскаров"]
                 }, 'personSite': {
                     id: 8,
                     name: 'Персональный сайт',
@@ -124,6 +127,7 @@ export default class Project extends React.Component {
                                     />
                                 </div>
                             </div>
+                            <hr/>
                             <div className="container">
                                 <h6 className="card-subtitle mb-2 text-muted">Задачи</h6>
                                 <div className="card-text" style={styles.mtb5}>
@@ -135,7 +139,20 @@ export default class Project extends React.Component {
                                     />
                                 </div>
                             </div>
-                            <hr/>
+                            <hr className={"mb-3"}/>
+                            {
+                                data.partners ?? <div className="container mb-3">
+                                    <h6 className="card-subtitle mb-2 text-muted">Задачи</h6>
+                                    <div className="card-text" style={styles.mtb5}>
+                                        <List
+                                            classNameList="list-group"
+                                            classNameItem="list-group-item"
+                                            data={data.partners}
+                                            style={styles.list}
+                                        />
+                                    </div>
+                                </div>
+                            }
                             <a href={`${data.link}`} className="btn btn-primary shadow">К проекту</a>
                         </div>
                     </div>
