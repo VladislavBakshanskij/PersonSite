@@ -3,7 +3,7 @@ import ListItem from './ListItem/ListItem';
 
 /**
  * list component
- * @param {data, style, styleItem} props
+ * @param {data, style, styleItem, classNameItem, classNameList} props
  */
 export default function List(props) {
     return (
