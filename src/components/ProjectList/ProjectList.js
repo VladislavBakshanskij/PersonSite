@@ -61,35 +61,39 @@ export default function ProjectList() {
         }
     ];
 
-    return <div className="container" style={{marginTop: 6}}>
-        <List
-            classNameList="list-group"
-            classNameItem="list-group-item mb-2 shadow-lg"
-            styleItem={{borderRadius: 5}}
+    return (
+        <main>
+            <div className="container" style={{marginTop: 6}}>
+                <List
+                    classNameList="list-group"
+                    classNameItem="list-group-item mb-2 shadow-lg"
+                    styleItem={{borderRadius: 5}}
 
-            style={{
-                fontSize: '1.05em',
-                width: 'fit-content',
-                textAlign: 'left',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                fontFamily: 'Montserrat, sans-serif'
-            }}
+                    style={{
+                        fontSize: '1.05em',
+                        width: 'fit-content',
+                        textAlign: 'left',
+                        marginLeft: 'auto',
+                        marginRight: 'auto',
+                        fontFamily: 'Montserrat, sans-serif'
+                    }}
 
-            data={data.map((item) => {
-                return (
-                    <div key={item.id.toString()}>
-                        <a href={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
-                            {item.title}
-                        </a>
-                        {
-                            <NavLink to={`/project/${item.name}`}>
-                                <i className="fa fa-arrow-right" aria-hidden="true"></i>
-                            </NavLink>
-                        }
-                    </div>
-                );
-            })}
-        />
-    </div>
+                    data={data.map((item) => {
+                        return (
+                            <div key={item.id.toString()}>
+                                <a href={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5}}>
+                                    {item.title}
+                                </a>
+                                {
+                                    <NavLink to={`/project/${item.name}`}>
+                                        <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </NavLink>
+                                }
+                            </div>
+                        );
+                    })}
+                />
+            </div>
+        </main>
+    );
 }
