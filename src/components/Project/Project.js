@@ -26,7 +26,13 @@ export default class Project extends React.Component {
                     name: 'Система помощи и прогнозирования сельскохозяйственных решений',
                     desc: 'Система помощи и прогнозирования сельскохозяйственных решений, реализующая древовидную структуру и показывающая дерево решений.',
                     tech: ['C#', '.Net Framework', 'Windows Forms', 'WPF', 'Git'],
-                    task: ['Реализиация модели', 'Вывод возможных альтернативных вариантов прогноза', 'Отрисовка дерева', 'Отрисовка эффертивной ветки', 'Вывод данных на дереве с периодом'],
+                    task: [
+                        'Реализиация модели',
+                        'Вывод возможных альтернативных вариантов прогноза',
+                        'Отрисовка дерева',
+                        'Отрисовка эффертивной ветки',
+                        'Вывод данных на дереве с периодом'
+                    ],
                     link: 'https://github.com/VladislavBakshanskij/CFAS',
                     partners: ["Лада Дунская"]
                 },
@@ -75,7 +81,12 @@ export default class Project extends React.Component {
                     name: 'Solid Runner (StartUp)',
                     desc: 'Вы играете за кубик, разбивая стекла с получением очков. Ваш персонаж владеет замедлением временем по необходимости. Жанр игры аркада.',
                     tech: ['C#', 'Unity', 'Blender'],
-                    task: ['Реализация генерации игрового мира', 'Реализация замедления времени', 'Объединение объектов в статический меш'],
+                    task: [
+                        'Реализация генерации игрового мира',
+                        'Реализация замедления времени',
+                        'Объединение объектов в статический меш',
+                        'Тестирование проекта'
+                    ],
                     link: '#!',
                     partners: ["Николай Накоркешко", "Радион Аскаров"]
                 }, 'personSite': {
@@ -121,7 +132,7 @@ export default class Project extends React.Component {
                                 <div className="card-text" style={styles.default}>
                                     <List
                                         classNameList="list-group"
-                                        classNameItem="list-group-item"
+                                        classNameItem="list-group-item shadow-sm mb-3"
                                         data={data.tech}
                                         style={styles.list}
                                     />
@@ -133,7 +144,7 @@ export default class Project extends React.Component {
                                 <div className="card-text" style={styles.mtb5}>
                                     <List
                                         classNameList="list-group"
-                                        classNameItem="list-group-item"
+                                        classNameItem="list-group-item shadow-sm mb-3"
                                         data={data.task}
                                         style={styles.list}
                                     />
@@ -141,17 +152,17 @@ export default class Project extends React.Component {
                             </div>
                             <hr className={"mb-3"}/>
                             {
-                                data.partners ?? <div className="container mb-3">
-                                    <h6 className="card-subtitle mb-2 text-muted">Задачи</h6>
+                                data.partners !== undefined ? <div className="container mb-3">
+                                    <h6 className="card-subtitle mb-2 text-muted">Участники проекта</h6>
                                     <div className="card-text" style={styles.mtb5}>
                                         <List
                                             classNameList="list-group"
-                                            classNameItem="list-group-item"
+                                            classNameItem="list-group-item shadow-sm mb-3"
                                             data={data.partners}
                                             style={styles.list}
                                         />
                                     </div>
-                                </div>
+                                </div> : ""
                             }
                             <a href={`${data.link}`} className="btn btn-primary shadow">К проекту</a>
                         </div>
