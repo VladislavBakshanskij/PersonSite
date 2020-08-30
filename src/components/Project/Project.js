@@ -1,7 +1,13 @@
 import React from 'react';
 import List from '../List/List';
 
+/**
+ * Component for detail project page
+ */
 export default class Project extends React.Component {
+    /**
+     * @param props
+     */
     constructor(props) {
         super(props);
 
@@ -78,8 +84,7 @@ export default class Project extends React.Component {
                     link: '/'
                 }
             },
-            key: this.props.match.params.projectName,
-            isPhone: window.innerWidth <= 600
+            key: this.props.match.params.projectName
         }
     }
 
