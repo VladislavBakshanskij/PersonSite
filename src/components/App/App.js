@@ -31,7 +31,10 @@ export default class App extends React.Component {
 
 	onCheckPhone() {
 		const isPhone = window.innerWidth <= 600;
-		this.setState({ isPhone: isPhone });
+
+		if (isPhone !== this.state.isPhone) {
+			this.setState({ isPhone: isPhone });
+		}
 	}
 
 	componentDidMount() {
@@ -40,6 +43,10 @@ export default class App extends React.Component {
 
 	componentWillMount() {
 		this.onCheckPhone();
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.interval);
 	}
 
 	render() {

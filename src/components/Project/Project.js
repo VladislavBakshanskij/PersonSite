@@ -106,39 +106,41 @@ export default class Project extends React.Component {
         };
 
         return (
-            <div className="container" style={styles.mtb10}>
-                <div className="card shadow-lg">
-                    <div className="card-body">
-                        <h4 className="card-title">{data.name}</h4>
-                        <div className="card-text" style={styles.mtb5}>{data.desc}</div>
-                        <hr/>
-                        <div className="container mb-3">
-                            <h6 className="card-subtitle mb-2 text-muted">Технологии</h6>
-                            <div className="card-text" style={styles.default}>
-                                <List
-                                    classNameList="list-group"
-                                    classNameItem="list-group-item"
-                                    data={data.tech}
-                                    style={styles.list}
-                                />
+            <main>
+                <div className="container" style={styles.mtb10}>
+                    <div className="card shadow-lg">
+                        <div className="card-body">
+                            <h4 className="card-title">{data.name}</h4>
+                            <div className="card-text" style={styles.mtb5}>{data.desc}</div>
+                            <hr/>
+                            <div className="container mb-3">
+                                <h6 className="card-subtitle mb-2 text-muted">Технологии</h6>
+                                <div className="card-text" style={styles.default}>
+                                    <List
+                                        classNameList="list-group"
+                                        classNameItem="list-group-item"
+                                        data={data.tech}
+                                        style={styles.list}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div className="container">
-                            <h6 className="card-subtitle mb-2 text-muted">Задачи</h6>
-                            <div className="card-text" style={styles.mtb5}>
-                                <List
-                                    classNameList="list-group"
-                                    classNameItem="list-group-item"
-                                    data={data.task}
-                                    style={styles.list}
-                                />
+                            <div className="container">
+                                <h6 className="card-subtitle mb-2 text-muted">Задачи</h6>
+                                <div className="card-text" style={styles.mtb5}>
+                                    <List
+                                        classNameList="list-group"
+                                        classNameItem="list-group-item"
+                                        data={data.task}
+                                        style={styles.list}
+                                    />
+                                </div>
                             </div>
+                            <hr/>
+                            <a href={`${data.link}`} className="btn btn-primary shadow">К проекту</a>
                         </div>
-                        <hr/>
-                        <a href={`${data.link}`} className="btn btn-primary shadow">К проекту</a>
                     </div>
                 </div>
-            </div>
+            </main>
         );
     }
 }
