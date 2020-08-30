@@ -35,7 +35,7 @@ export default class App extends React.Component {
 	}
 
 	componentDidMount() {
-		this.interval = setInterval(() => this.onCheckPhone(), 1000);
+		this.interval = setInterval(() => this.onCheckPhone(), 1500);
 	}
 
 	componentWillMount() {

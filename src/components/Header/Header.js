@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
+import List from '../List/List';
 
 /**
  * Component for header on my site 
@@ -15,14 +16,30 @@ export default function Header() {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNav">
-					<ul className="navbar-nav">
-						<li className="nav-item">
-							<NavLink exact to="/" activeClassName="active" className="nav-link">Главная страница</NavLink>
-						</li>
-						<li className="nav-item">
-							<NavLink to="/contact" activeClassName="active" className="nav-link">Контакты</NavLink>
-						</li>
-					</ul>
+					{<List
+						classNameList="navbar-nav"
+						classNameItem="nav-item"
+
+						data={[{
+								id: 0,
+								to: "/",
+								exact: true,
+								text: "Главная страница"
+							}, {
+								id: 1,
+								to: "/contact",
+								exact: false,
+								text: "Контакты"
+							}
+						].map((item) => {
+							return (
+								<NavLink key={item.id.toString()} exact={item.exact} to={item.to} activeClassName="active"
+										 className="nav-link">
+									{item.text}
+								</NavLink>
+							);
+						})}
+					/>}
 				</div>
 			</nav>
 		</header>
