@@ -1,4 +1,30 @@
-main {
+* {
+    font-family: 'Playfair Display', serif;
+    font-size: 1em
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+#root {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+#root > header {
+    flex: 0 1 auto;
+}
+
+#root > main {
+    flex: 0 1 auto;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+#root > footer {
+    flex: 1 1 auto;
 }
