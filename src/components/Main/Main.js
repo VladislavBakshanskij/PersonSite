@@ -5,6 +5,7 @@ import Config from '../Config/Config';
 import Card from '../Card/Card';
 import List from '../List/List';
 import { NavLink } from 'react-router-dom';
+import './Main.css';
 
 const sectionContentByDuraction = (title, content, stuffContent, isLeft) => {
     let data = [];
@@ -139,7 +140,6 @@ export default function Main(props) {
                                         Windows Forms,
                                         English - A2 (легкое чтение документации на английском языке)
                                     `}
-                                    style={isPhone ? {maxWidth: `18em`, borderRadius: '10px'} : ""}
                                 />
                             </div>
                             <div className="col">
