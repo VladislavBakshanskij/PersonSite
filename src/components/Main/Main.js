@@ -6,6 +6,37 @@ import Card from '../Card/Card';
 import List from '../List/List';
 import { NavLink } from 'react-router-dom';
 
+const sectionContentByDuraction = (title, content, stuffContent, styleCard, isLeft) => {
+    const data = [];
+
+    if (isLeft) {
+        data.push(
+            <Card
+                title={title}
+                content={content}
+                style={styleCard}
+            />
+        );
+
+        data.push(stuffContent);
+    } else {
+        data.push(stuffContent);
+
+        data.push(
+            <Card
+                title={title}
+                content={content}
+                style={styleCard}
+            />
+        );
+    }
+
+    return (
+        <div className="row">
+            {data.map((item) => <div className={"col"}>{item}</div>)}
+        </div>
+    );
+}
 
 /**
  * Main component for site
@@ -14,59 +45,34 @@ import { NavLink } from 'react-router-dom';
  */
 export default function Main(props) {
     const isPhone = props.isPhone;
+    const xhr = new XMLHttpRequest();
+    var styleCard = undefined;
+
+    if (!isPhone) {
+        styleCard = {
+            maxWidth: '18rem',
+            borderRadius: '10px'
+        };
+    }
+
+    const style = {
+        borderRadius: 10,
+        width: isPhone ? '90%' : "80%"
+    };
+
+    if (isPhone) {
+        style.marginLeft = 'auto';
+        style.marginRight = 'auto';
+        style.display = 'block';
+    }
 
     return (
         <main className="main">
             <div className="container">
                 {
                     Config.SECTIONS.map((section) => {
-                        const width = section.width;
                         const isFirst = section.id === 0;
                         const isLeftContent = section.id % 2 === 0;
-                        const style = {
-                            borderRadius: 10,
-                            width: isPhone ? '90%' : "80%"
-                        };
-
-                        if (isPhone) {
-                            style.marginLeft = 'auto';
-                            style.marginRight = 'auto';
-                            style.display = 'block';
-                        }
-
-                        const sectionContentLeft = (title, content, width, stuffContent) => {
-                            return (
-                                <div className="row">
-                                    <div className="col">
-                                        <Card
-                                            title={title}
-                                            content={content}
-                                            width={width}
-                                        />
-                                    </div>
-                                    <div className="col">
-                                        {stuffContent}
-                                    </div>
-                                </div>
-                            );
-                        }
-
-                        const sectionContentRight = (title, content, width, stuffContent) => {
-                            return (
-                                <div className="row">
-                                    <div className="col">
-                                        {stuffContent}
-                                    </div>
-                                    <div className="col">
-                                        <Card
-                                            title={title}
-                                            content={content}
-                                            width={width}
-                                        />
-                                    </div>
-                                </div>
-                            );
-                        };
 
                         return (
                             <Section
@@ -78,7 +84,6 @@ export default function Main(props) {
                                                 <Card
                                                     title={section.title === "Мои проекты" ? <NavLink to="/projects" style={{ color: 'gray' }}>{section.title}</NavLink> : section.title}
                                                     content={section.content}
-                                                    width={'fit-content'}
                                                     imgSrc={isFirst ? first : ""}
                                                     altImg={"Picture with me"}
                                                     styleImg={style}
@@ -86,24 +91,12 @@ export default function Main(props) {
                                             </div>
                                         </div>
                                         :
-                                        <div className="row">
-                                            {
-                                                isLeftContent ?
-                                                    sectionContentRight(
-                                                        section.title,
-                                                        section.content,
-                                                        width,
-                                                        isFirst ? <img src={first} alt="Picture with me" style={style} /> : section.stuff
-                                                    )
-                                                    :
-                                                    sectionContentLeft(
-                                                        section.title,
-                                                        section.content,
-                                                        width,
-                                                        isFirst ? <img src={first} alt="Picture with me" style={style} /> : section.stuff
-                                                    )
-                                            }
-                                        </div>
+                                        sectionContentByDuraction(
+                                            section.title,
+                                            section.content,
+                                            isFirst ? <img src={first} alt="Picture with me" style={style} /> : section.stuff,
+                                            isLeftContent
+                                        )
                                 }
                             />
                         )
@@ -125,10 +118,10 @@ export default function Main(props) {
                                             JS,
                                             React,
                                             SQL,
+                                            WPF,
+                                            Windows Forms,
                                             English - A2 (легкое чтение документации на английском языке)
                                         `}
-
-                                        width={'fit-content'}
                                     />
                                 </div>
                             </div>
@@ -148,7 +141,6 @@ export default function Main(props) {
                                                 ]}
                                             />
                                         }
-                                        width={'fit-content'}
                                     />
                                 </div>
                             </div>
@@ -167,9 +159,11 @@ export default function Main(props) {
                                         JS,
                                         React,
                                         SQL,
+                                        WPF,
+                                        Windows Forms,
                                         English - A2 (легкое чтение документации на английском языке)
                                     `}
-                                    width={'fit-content'}
+                                    style={styleCard}
                                 />
                             </div>
                             <div className="col">
@@ -187,7 +181,7 @@ export default function Main(props) {
                                             ]}
                                         />
                                     }
-                                    width={'fit-content'}
+                                    style={styleCard}
                                 />
                             </div>
                         </div>
