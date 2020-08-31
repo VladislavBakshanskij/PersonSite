@@ -6,15 +6,14 @@ import Card from '../Card/Card';
 import List from '../List/List';
 import { NavLink } from 'react-router-dom';
 
-const sectionContentByDuraction = (title, content, stuffContent, styleCard, isLeft) => {
-    const data = [];
+const sectionContentByDuraction = (title, content, stuffContent, isLeft) => {
+    let data = [];
 
     if (isLeft) {
         data.push(
             <Card
                 title={title}
                 content={content}
-                style={styleCard}
             />
         );
 
@@ -26,14 +25,13 @@ const sectionContentByDuraction = (title, content, stuffContent, styleCard, isLe
             <Card
                 title={title}
                 content={content}
-                style={styleCard}
             />
         );
     }
 
     return (
         <div className="row">
-            {data.map((item) => <div className={"col"}>{item}</div>)}
+            {data.map((item, index) => <div className={"col"} key={index.toString()}>{item}</div>)}
         </div>
     );
 }
@@ -45,26 +43,6 @@ const sectionContentByDuraction = (title, content, stuffContent, styleCard, isLe
  */
 export default function Main(props) {
     const isPhone = props.isPhone;
-    const xhr = new XMLHttpRequest();
-    var styleCard = undefined;
-
-    if (!isPhone) {
-        styleCard = {
-            maxWidth: '18rem',
-            borderRadius: '10px'
-        };
-    }
-
-    const style = {
-        borderRadius: 10,
-        width: isPhone ? '90%' : "80%"
-    };
-
-    if (isPhone) {
-        style.marginLeft = 'auto';
-        style.marginRight = 'auto';
-        style.display = 'block';
-    }
 
     return (
         <main className="main">
@@ -76,7 +54,6 @@ export default function Main(props) {
 
                         return (
                             <Section
-                                key={section.id.toString()}
                                 body={
                                     isPhone ?
                                         <div className="row">
@@ -86,18 +63,17 @@ export default function Main(props) {
                                                     content={section.content}
                                                     imgSrc={isFirst ? first : ""}
                                                     altImg={"Picture with me"}
-                                                    styleImg={style}
                                                 />
                                             </div>
                                         </div>
-                                        :
-                                        sectionContentByDuraction(
+                                        :sectionContentByDuraction(
                                             section.title,
                                             section.content,
-                                            isFirst ? <img src={first} alt="Picture with me" style={style} /> : section.stuff,
-                                            isLeftContent
+                                            isFirst ? <img src={first} alt="Picture with me"/> : section.stuff,
+                                            !isLeftContent
                                         )
                                 }
+                                key={section.id.toString()}
                             />
                         )
                     })
@@ -163,7 +139,7 @@ export default function Main(props) {
                                         Windows Forms,
                                         English - A2 (легкое чтение документации на английском языке)
                                     `}
-                                    style={styleCard}
+                                    style={isPhone ? {maxWidth: `18em`, borderRadius: '10px'} : ""}
                                 />
                             </div>
                             <div className="col">
@@ -181,7 +157,6 @@ export default function Main(props) {
                                             ]}
                                         />
                                     }
-                                    style={styleCard}
                                 />
                             </div>
                         </div>
