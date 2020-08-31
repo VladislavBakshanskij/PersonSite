@@ -30,6 +30,11 @@ export default function Header() {
 								to: "/contact",
 								exact: false,
 								text: "Контакты"
+							}, {
+								id: 2,
+								to: "/projects",
+								exact: false,
+								text: "Проекты"
 							}
 						].map((item) => {
 							return (

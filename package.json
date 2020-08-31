@@ -22,7 +22,7 @@
     "React",
     "creat-react-app"
   ],
-  "author": "Vladislav Bakshanskij <vbakshanskij2000@gmail.com>", 
+  "author": "Vladislav Bakshanskij <vbakshanskij2000@gmail.com>",
   "license": "ISC",
   "eslintConfig": {
     "extends": "react-app"

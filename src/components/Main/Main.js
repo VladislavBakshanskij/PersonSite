@@ -75,15 +75,14 @@ export default function Main(props) {
                                     isPhone ?
                                         <div className="row">
                                             <div className="col-12">
-                                                <section className="card border-light section mb-3 shadow__hover shadow-lg" style={{ borderRadius: "10px" }}>
-                                                    <h2 className="section__title">{section.title === "Мои проекты" ? <NavLink to="/projects" style={{color: 'gray'}}>{section.title}</NavLink> : section.title}</h2>
-                                                    {isFirst ? <img src={first} alt="Picture with me" style={style} /> : ""}
-                                                    <div className="card-body">
-                                                        <div className="card-text section__body">
-                                                            {section.content}
-                                                        </div>
-                                                    </div>
-                                                </section>
+                                                <Card
+                                                    title={section.title === "Мои проекты" ? <NavLink to="/projects" style={{ color: 'gray' }}>{section.title}</NavLink> : section.title}
+                                                    content={section.content}
+                                                    width={'fit-content'}
+                                                    imgSrc={isFirst ? first : ""}
+                                                    altImg={"Picture with me"}
+                                                    styleImg={style}
+                                                />
                                             </div>
                                         </div>
                                         :
@@ -96,7 +95,7 @@ export default function Main(props) {
                                                         width,
                                                         isFirst ? <img src={first} alt="Picture with me" style={style} /> : section.stuff
                                                     )
-                                                :
+                                                    :
                                                     sectionContentLeft(
                                                         section.title,
                                                         section.content,
@@ -112,13 +111,12 @@ export default function Main(props) {
                 }
                 {
                     isPhone ?
-                    <div>
-                        <div className="row">
-                            <div className="col-12">
-                                <section className="card border-light section mb-3 shadow__hover shadow-lg" style={{ borderRadius: "10px" }}>
-                                    <h2 className="section__title">Навыки</h2>
-                                    <div className="card-body">
-                                        <div className="card-text section__body">
+                        <div>
+                            <div className="row mb-3">
+                                <div className="col-12">
+                                    <Card
+                                        title={"Навыки"}
+                                        content={`
                                             Python,
                                             C#,
                                             PHP,
@@ -126,63 +124,73 @@ export default function Main(props) {
                                             CSS,
                                             JS,
                                             React,
-                                            SQL,<br/>
+                                            SQL,
                                             English - A2 (легкое чтение документации на английском языке)
-                                        </div>
-                                    </div>
-                                </section>
+                                        `}
+
+                                        width={'fit-content'}
+                                    />
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-12">
+                                    <Card
+                                        title={"Прошлые места работы"}
+                                        content={
+                                            <List
+                                                classNameList="list-group"
+                                                classNameItem="list-group-item mb-2 shadow"
+                                                styleItem={{ width: 'fit-content' }}
+
+                                                data={[
+                                                    "Кубанский Государственный Университет - Системный администратор",
+                                                    "Кубанский Государственный Университет - Контент-менеджер"
+                                                ]}
+                                            />
+                                        }
+                                        width={'fit-content'}
+                                    />
+                                </div>
                             </div>
                         </div>
+                        :
                         <div className="row">
-                            <div className="col-12">
-                                <section className="card border-light section mb-3 shadow__hover shadow-lg" style={{ borderRadius: "10px" }}>
-                                    <h2 className="section__title">Прошлые места работы</h2>
-                                    <div className="card-body">
-                                        <div className="card-text section__body">
+                            <div className="col">
+                                <Card
+                                    title={"Навыки"}
+                                    content={`
+                                        Python,
+                                        C#,
+                                        PHP,
+                                        HTML,
+                                        CSS,
+                                        JS,
+                                        React,
+                                        SQL,
+                                        English - A2 (легкое чтение документации на английском языке)
+                                    `}
+                                    width={'fit-content'}
+                                />
+                            </div>
+                            <div className="col">
+                                <Card
+                                    title={"Прошлые места работы"}
+                                    content={
                                         <List
+                                            classNameList="list-group"
+                                            classNameItem="list-group-item mb-2 shadow"
+                                            styleItem={{ width: 'fit-content' }}
+
                                             data={[
                                                 "Кубанский Государственный Университет - Системный администратор",
                                                 "Кубанский Государственный Университет - Контент-менеджер"
-                                            ] }
+                                            ]}
                                         />
-                                        </div>
-                                    </div>
-                                </section>
+                                    }
+                                    width={'fit-content'}
+                                />
                             </div>
-                        </div> 
-                    </div> 
-                    :
-                    <div className="row">
-                        <div className="col">
-                            <Card
-                                title={"Навыки"}
-                                content={`
-                                    Python,
-                                    C#,
-                                    PHP,
-                                    HTML,
-                                    CSS,
-                                    JS,
-                                    React,
-                                    SQL,
-                                    English - A2 (легкое чтение документации на английском языке)
-                                `}
-                                width={'fit-content'}
-                            />
                         </div>
-                        <div className="col">
-                            <Card
-                                title={"Прошлые места работы"}
-                                content={<List
-                                    data={[
-                                        "Кубанский Государственный Университет - Системный администратор",
-                                        "Кубанский Государственный Университет - Контент-менеджер"
-                                    ] }
-                                />}
-                                width={'fit-content'}
-                            />
-                        </div>
-                    </div>
                 }
             </div>
         </main>
