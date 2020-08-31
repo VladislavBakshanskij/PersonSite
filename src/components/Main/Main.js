@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 /**
  * Main component for site
- * render all content by index.html by path /(https://vladislavbakshanskij.herokuapp.com)
+ * render all content in index.html by path /(https://vladislavbakshanskij.herokuapp.com)
  * @param { isPhone } props 
  */
 export default function Main(props) {
