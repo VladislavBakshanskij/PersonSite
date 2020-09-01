@@ -94,8 +94,15 @@ export default class Project extends React.Component {
                     name: 'Персональный сайт',
                     desc: 'Персональный сайт демонстрирующий портфолио.',
                     tech: ['JS', 'CSS', 'Bootstrap', 'React', 'Git'],
-                    task: ['Создание сайта для демонстрации порфолио', 'Создание главной компоненты', 'Создание компоненты контаков', 'Создание компоненты список, карта, секция'],
-                    link: '/'
+                    task: [
+                        'Создание сайта для демонстрации порфолио',
+                        'Создание главной компоненты',
+                        'Создание компоненты контаков',
+                        'Создание компоненты список, карта, секция',
+                        'Рефакторинг',
+                        'Code review'
+                    ],
+                    link: 'https://github.com/VladislavBakshanskij/PersonSite'
                 }
             },
             key: this.props.match.params.projectName

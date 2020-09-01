@@ -11,7 +11,7 @@ export default function Header() {
 	return (
 		<header className="shadow border-radius-down">
 			<nav className="navbar navbar-expand-lg navbar-light">
-				<NavLink className="navbar-brand" to="/">Vladislav <em>Bakshanskij</em></NavLink>
+				<NavLink className="navbar-brand" to="/">Vladislav Bakshanskij</NavLink>
 				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>

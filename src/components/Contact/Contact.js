@@ -56,7 +56,7 @@ export default function Contact(props) {
 
 		return (
 			<a href={`${link.link}`} key={link.id.toString()}>
-				<img src={logo.picture} alt={link.name} width="50"/> <strong style={{color: logo.color}}>
+				<img src={logo.picture} alt={link.name} style={{width: 50}} className={"d-inline"}/> <strong style={{color: logo.color}}>
 					<Border text={link.name}/>
 				</strong>
 			</a>
@@ -64,17 +64,11 @@ export default function Contact(props) {
 	});
 
 	data.push(
-		(
-			() => {
-				return (
-					<a href={`mailto:${Config.EMAIL}`}>
-						<img src={gmail} alt="gmail" width="50"/> <strong>
-							<Border text="Email"/>
-						</strong>
-					</a>
-				);
-			}
-		)()
+		<a href={`mailto:${Config.EMAIL}`}>
+			<img src={gmail} alt="gmail" style={{width: 50}} className={"d-inline"}/> <strong>
+				<Border text="Email"/>
+			</strong>
+		</a>
 	);
 
 	return (
