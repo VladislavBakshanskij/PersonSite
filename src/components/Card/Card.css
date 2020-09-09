@@ -1,9 +1,9 @@
-.section__title {
+.card__title {
     padding-top: 5px;
     padding-left: 10px;
 }
 
-.section__body {
+.card__body {
     font-family: 'Montserrat', sans-serif;
 }
 

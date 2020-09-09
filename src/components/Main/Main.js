@@ -109,7 +109,7 @@ export default function Main(props) {
                                         content={
                                             <List
                                                 classNameList="list-group"
-                                                classNameItem="list-group-item mb-2 shadow"
+                                                classNameItem="list-group-item mb-2 shadow card__body"
                                                 styleItem={{ width: 'fit-content' }}
 
                                                 data={[
@@ -148,7 +148,7 @@ export default function Main(props) {
                                     content={
                                         <List
                                             classNameList="list-group"
-                                            classNameItem="list-group-item mb-2 shadow"
+                                            classNameItem="list-group-item mb-2 shadow card__body"
                                             styleItem={{ width: 'fit-content' }}
 
                                             data={[

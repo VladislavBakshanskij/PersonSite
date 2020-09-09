@@ -135,11 +135,11 @@ export default class Project extends React.Component {
                             <div className="card-text" style={styles.mtb5}>{data.desc}</div>
                             <hr/>
                             <div className="container mb-3">
-                                <h6 className="card-subtitle mb-2 text-muted">Технологии</h6>
+                                <h6 className="card-subtitle mb-2 text-muted" style={{fontSize: 20}}>Технологии</h6>
                                 <div className="card-text" style={styles.default}>
                                     <List
                                         classNameList="list-group"
-                                        classNameItem="list-group-item shadow-sm mb-3"
+                                        classNameItem="list-group-item shadow-sm mb-3 card__body"
                                         data={data.tech}
                                         style={styles.list}
                                     />
@@ -147,11 +147,11 @@ export default class Project extends React.Component {
                             </div>
                             <hr/>
                             <div className="container">
-                                <h6 className="card-subtitle mb-2 text-muted">Задачи</h6>
+                                <h6 className="card-subtitle mb-2 text-muted" style={{fontSize: 20}}>Задачи</h6>
                                 <div className="card-text" style={styles.mtb5}>
                                     <List
                                         classNameList="list-group"
-                                        classNameItem="list-group-item shadow-sm mb-3"
+                                        classNameItem="list-group-item shadow-sm mb-3 card__body"
                                         data={data.task}
                                         style={styles.list}
                                     />
@@ -160,15 +160,16 @@ export default class Project extends React.Component {
                             <hr className={"mb-3"}/>
                             {
                                 data.partners !== undefined ? <div className="container mb-3">
-                                    <h6 className="card-subtitle mb-2 text-muted">Участники проекта</h6>
+                                    <h6 className="card-subtitle mb-2 text-muted" style={{fontSize: 20}}>Участники проекта</h6>
                                     <div className="card-text" style={styles.mtb5}>
                                         <List
                                             classNameList="list-group"
-                                            classNameItem="list-group-item shadow-sm mb-3"
+                                            classNameItem="list-group-item shadow-sm mb-3 card__body"
                                             data={data.partners}
                                             style={styles.list}
                                         />
                                     </div>
+                                    <hr className={"mb-3"}/>
                                 </div> : ""
                             }
                             <a href={`${data.link}`} className="btn btn-primary shadow">К проекту</a>
