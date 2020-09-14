@@ -67,7 +67,6 @@ export default class Main extends React.Component {
                     this.state.isLoad ? <div className="container">
                         {
                             this.state.sections.map((section) => {
-                                console.log("Hello world!");
                                 const isFirst = section.id === 0;
                                 const isLeftContent = section.id % 2 === 0;
 
