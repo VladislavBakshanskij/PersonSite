@@ -22,72 +22,90 @@ const Border = (props) => <span>/ {props.text}  /</span>;
  * Component for page contact with me
  * @param { contactLinks, style } props
  */
-export default function Contact(props) {
-	const contactLinks = props.contactLinks;
-	const imgs = {
-		LinkedIn: {
-			picture: linkedin,
-			color: '#0077B7'
-		},
-		Twitter: {
-			picture: twitter,
-			color: '#03A8F3'
-		},
-		Instagram: {
-			picture: instagram,
-			color: '#F7504D'
-		},
-		Vk: {
-			picture: vk,
-			color: '#4D76A1'
-		},
-		Telegram: {
-			picture: telegram,
-			color: '#039BE5'
-		},
-		GitHub: {
-			picture: github,
-			color: 'black'
-		},
-	};
+export default class Contact extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			isLoad: false,
+			contactLinks: props.contactLinks
+		};
+	}
 
-	const data = contactLinks.map((link) => {
-		const logo = imgs[link.name];
+	componentDidMount() {
+		const contactLinks = this.state.contactLinks;
 
-		return (
-			<a href={`${link.link}`} key={link.id.toString()}>
-				<img src={logo.picture} alt={link.name} style={{width: 50}} className={"d-inline"}/> <strong style={{color: logo.color}}>
-					<Border text={link.name}/>
+		const imgs = {
+			LinkedIn: {
+				picture: linkedin,
+				color: '#0077B7'
+			},
+			Twitter: {
+				picture: twitter,
+				color: '#03A8F3'
+			},
+			Instagram: {
+				picture: instagram,
+				color: '#F7504D'
+			},
+			Vk: {
+				picture: vk,
+				color: '#4D76A1'
+			},
+			Telegram: {
+				picture: telegram,
+				color: '#039BE5'
+			},
+			GitHub: {
+				picture: github,
+				color: 'black'
+			},
+		};
+	
+		const data = contactLinks.map((link) => {
+			const logo = imgs[link.name];
+	
+			return (
+				<a href={`${link.link}`} key={link.id.toString()}>
+					<img src={logo.picture} alt={link.name} style={{width: 50}} className={"d-inline"}/> <strong style={{color: logo.color}}>
+						<Border text={link.name}/>
+					</strong>
+				</a>
+			);
+		});
+	
+		data.push(
+			<a href={`mailto:${Config.EMAIL}`}>
+				<img src={gmail} alt="gmail" style={{width: 50}} className={"d-inline"}/> <strong>
+					<Border text="Email"/>
 				</strong>
 			</a>
 		);
-	});
 
-	data.push(
-		<a href={`mailto:${Config.EMAIL}`}>
-			<img src={gmail} alt="gmail" style={{width: 50}} className={"d-inline"}/> <strong>
-				<Border text="Email"/>
-			</strong>
-		</a>
-	);
+		this.setState({
+			isLoad: true,
+			data: data
+		});
+	}
 
-	return (
-		<main>
-			<div className="container">
-				<List
-					classNameList="list-group"
-					classNameItem="list-group-item shadow-lg mb-2"
-					data={data}
-					style={{
-						fontSize: '25px',
-						width: 'fit-content',
-						textAlign: 'left',
-						marginLeft: 'auto',
-						marginRight: 'auto',
-						fontFamily: 'Montserrat, sans-serif'
-					}}
-				/>
-			</div>
-		</main>
-	);
+	render() {
+		return (
+			<main>
+				{this.state.isLoad ? <div className="container">
+					<List
+						classNameList="list-group"
+						classNameItem="list-group-item shadow-lg mb-2"
+						data={this.state.data}
+						style={{
+							fontSize: '25px',
+							width: 'fit-content',
+							textAlign: 'left',
+							marginLeft: 'auto',
+							marginRight: 'auto',
+							fontFamily: 'Montserrat, sans-serif'
+						}}
+					/>
+				</div> : "Loading"}
+			</main>
+		);
+	}
 }

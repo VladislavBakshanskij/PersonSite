@@ -21,10 +21,8 @@ import ProjectList from '../ProjectList/ProjectList';
 export default class App extends React.Component {
 	constructor(props) {
 		super(props);
-		const myPhoto = `${process.env.PUBLIC_URL}/static/1.jpeg`;
 		const isPhone = window.innerWidth <= 600;
 		this.state = {
-			myPhoto: myPhoto,
 			isPhone: isPhone
 		};
 	}
@@ -57,7 +55,7 @@ export default class App extends React.Component {
 					<Route path="/contact" component={() => <Contact contactLinks={Config.SOCIALLINKS} />} />
 					<Route path="/project/:projectName/" component={Project} />
 					<Route path="/projects/" component={() => <ProjectList />} />
-					<Route exact path="/" component={() => <Main imgSrc={this.state.myPhoto} isPhone={this.state.isPhone} />} />
+					<Route exact path="/" component={() => <Main isPhone={this.state.isPhone} />} />
 					<Route component={() => <NotFound />} />
 				</Switch>
 				<Footer socialsLinks={Config.SOCIALLINKS} email={Config.EMAIL} />
