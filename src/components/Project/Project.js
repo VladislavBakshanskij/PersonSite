@@ -1,6 +1,7 @@
 import React from 'react';
 import List from '../List/List';
 
+
 /**
  * Component for detail project page
  */

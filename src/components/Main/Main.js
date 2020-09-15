@@ -7,6 +7,7 @@ import List from '../List/List';
 import { NavLink } from 'react-router-dom';
 import './Main.css';
 
+
 const sectionContentByDuraction = (title, content, stuffContent, isLeft) => {
     let data = [];
 
