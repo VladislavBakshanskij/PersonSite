@@ -23,7 +23,7 @@
 		
 	</head>
 	<body>
-		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<noscript>Вам нужно включить Javascript для работы данного приложения.</noscript>
 		<div id="root"></div>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -42,9 +42,9 @@
 						console.log('ServiceWorker registration successful with scope: ', registration.scope);
 					}, function(err) {
 						// registration failed :(
-						console.log('ServiceWorker registration failed: ', err);
+						console.error('ServiceWorker registration failed: ', err);
 					}).catch(function(err) {
-						console.log(err)
+						console.error(err)
 					});
 				});
 			} else {
