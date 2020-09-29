@@ -1,10 +1,9 @@
-# build environment
+# build environment react
 FROM node:12 as react-build
 WORKDIR /app
 COPY . ./
-RUN npm
 RUN npm install
-RUN npm build
+RUN npm run build
 
 # server environment
 FROM nginx:alpine

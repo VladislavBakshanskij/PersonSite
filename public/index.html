@@ -9,6 +9,10 @@
 		<meta name="keywords" content="React; Portfolio; SPA; CreateReactApp; "/>
 		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+		<!-- Tell the browser it's a PWA -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!-- Tell iOS it's a PWA -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!--Header font-->
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -19,7 +23,7 @@
 		
 	</head>
 	<body>
-		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<noscript>Вам нужно включить Javascript для работы данного приложения.</noscript>
 		<div id="root"></div>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -30,6 +34,22 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 		</script>
-		
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function() {
+					navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+						// Registration was successful
+						console.log('ServiceWorker registration successful with scope: ', registration.scope);
+					}, function(err) {
+						// registration failed :(
+						console.error('ServiceWorker registration failed: ', err);
+					}).catch(function(err) {
+						console.error(err)
+					});
+				});
+			} else {
+				console.log('service worker is not supported');
+			}
+		</script>
 	</body>
 </html>

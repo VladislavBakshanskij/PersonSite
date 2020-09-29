@@ -15,7 +15,8 @@ export default class App extends React.Component {
 		super(props);
 		const isPhone = window.innerWidth <= 600;
 		this.state = {
-			isPhone: isPhone
+			isPhone: isPhone,
+			isLoad: false
 		};
 	}
 
@@ -29,6 +30,9 @@ export default class App extends React.Component {
 
 	componentDidMount() {
 		this.interval = setInterval(() => this.onCheckPhone(), 1500);
+		this.setState({
+			isLoad: true
+		})
 	}
 
 	componentWillMount() {
@@ -40,13 +44,19 @@ export default class App extends React.Component {
 	}
 
 	render() {
-		return (
-			<Router>
-				<Header />
-				<Routes />
-				<Footer socialsLinks={Config.SOCIALLINKS} email={Config.EMAIL} />
-			</Router>
-		);
+		if (this.state.isLoad) { 
+			return (
+				<Router>
+					<Header />
+					<Routes />
+					<Footer socialsLinks={Config.SOCIALLINKS} email={Config.EMAIL} />
+				</Router>
+			);
+		} else {
+			return (
+				<div>Loading...</div>
+			);
+		}
 	}
 }
 
