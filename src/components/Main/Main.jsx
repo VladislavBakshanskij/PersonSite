@@ -61,6 +61,46 @@ export default class Main extends React.Component {
 
     render() {
         const isPhone = this.state.isPhone;
+        
+        const cards = {
+            works: () => {
+                return (
+                    <Card
+                        title={"Прошлые места работы"}
+                        content={
+                            <List
+                                classNameList="list-group"
+                                classNameItem="list-group-item mb-2 shadow card__body"
+                                styleItem={{ width: 'fit-content' }}
+
+                                data={["Отсутствуют"]}
+                            />
+                        }
+                    />
+                );
+            },
+            skills: () => {
+                return (
+                    <Card
+                        title={"Навыки"}
+                        content={`
+                            Python,
+                            C#,
+                            PHP,
+                            HTML,
+                            CSS,
+                            JS,
+                            React,
+                            SQL,
+                            WPF,
+                            Windows Forms,
+                            Docker,
+                            English - A2 (легкое чтение документации на английском языке)
+                        `}
+                    />
+                );
+            }
+        };
 
         return (
             <main className="main">
@@ -102,80 +142,22 @@ export default class Main extends React.Component {
                                 <div>
                                     <div className="row mb-3">
                                         <div className="col-12">
-                                            <Card
-                                                title={"Навыки"}
-                                                content={`
-                                                    Python,
-                                                    C#,
-                                                    PHP,
-                                                    HTML,
-                                                    CSS,
-                                                    JS,
-                                                    React,
-                                                    SQL,
-                                                    WPF,
-                                                    Windows Forms,
-                                                    English - A2 (легкое чтение документации на английском языке)
-                                                `}
-                                            />
+                                            {<cards.skills/>}
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <div className="col-12">
-                                            <Card
-                                                title={"Прошлые места работы"}
-                                                content={
-                                                    <List
-                                                        classNameList="list-group"
-                                                        classNameItem="list-group-item mb-2 shadow card__body"
-                                                        styleItem={{ width: 'fit-content' }}
-
-                                                        data={[
-                                                            "Кубанский Государственный Университет - Системный администратор",
-                                                            "Кубанский Государственный Университет - Контент-менеджер"
-                                                        ]}
-                                                    />
-                                                }
-                                            />
+                                        <div className="col-12">                                   
+                                            {<cards.works/>}
                                         </div>
                                     </div>
                                 </div>
                                 :
                                 <div className="row">
                                     <div className="col">
-                                        <Card
-                                            title={"Навыки"}
-                                            content={`
-                                                Python,
-                                                C#,
-                                                PHP,
-                                                HTML,
-                                                CSS,
-                                                JS,
-                                                React,
-                                                SQL,
-                                                WPF,
-                                                Windows Forms,
-                                                English - A2 (легкое чтение документации на английском языке)
-                                            `}
-                                        />
+                                        {<cards.skills/>}
                                     </div>
-                                    <div className="col">
-                                        <Card
-                                            title={"Прошлые места работы"}
-                                            content={
-                                                <List
-                                                    classNameList="list-group"
-                                                    classNameItem="list-group-item mb-2 shadow card__body"
-                                                    styleItem={{ width: 'fit-content' }}
-
-                                                    data={[
-                                                        "Кубанский Государственный Университет - Системный администратор",
-                                                        "Кубанский Государственный Университет - Контент-менеджер"
-                                                    ]}
-                                                />
-                                            }
-                                        />
+                                    <div className="col">                                    
+                                        {<cards.works/>}
                                     </div>
                                 </div>
                         }
