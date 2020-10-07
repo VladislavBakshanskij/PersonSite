@@ -12,7 +12,7 @@ export default function ProjectList() {
             <div className="container" style={{marginTop: 6}}>
                 <List
                     classNameList="list-group"
-                    classNameItem="list-group-item mb-2 shadow-lg"
+                    classNameItem="list-group-item mb-2 shadow-lg shadow__hover"
                     styleItem={{borderRadius: 5}}
 
                     style={{

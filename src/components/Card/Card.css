@@ -7,6 +7,15 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.shadow__hover {
+    box-shadow: 0 0em 1em rgb(153, 150, 150);
+    transition: 0.5s linear;
+}
+
+.shadow__hover:hover {
+    box-shadow: 0 2px 2px rgb(141, 139, 139), 0 10px 10px rgb(104, 103, 103) !important;
+}
+
 @media only screen and (min-width: 600px) {
     .section {
         background: none;

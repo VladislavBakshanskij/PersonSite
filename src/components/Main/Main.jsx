@@ -128,7 +128,7 @@ export default class Main extends React.Component {
                                                 :sectionContentByDuraction(
                                                     section.title,
                                                     section.content,
-                                                    isFirst ? <img src={first} alt="Picture with me"/> : section.stuff,
+                                                    isFirst ? <img src={first} alt="Picture with me" className="shadow__hover"/> : section.stuff,
                                                     !isLeftContent
                                                 )
                                         }

@@ -93,7 +93,7 @@ export default class Contact extends React.Component {
 				{this.state.isLoad ? <div className="container">
 					<List
 						classNameList="list-group"
-						classNameItem="list-group-item shadow-lg mb-2"
+						classNameItem="list-group-item shadow-lg mb-2 shadow__hover"
 						data={this.state.data}
 						style={{
 							fontSize: '25px',
