@@ -140,7 +140,7 @@ export default class Project extends React.Component {
                                 <div className="card-text" style={styles.default}>
                                     <List
                                         classNameList="list-group"
-                                        classNameItem="list-group-item shadow-sm mb-3 card__body"
+                                        classNameItem="list-group-item shadow-sm mb-3 card__body shadow__hover"
                                         data={data.tech}
                                         style={styles.list}
                                     />
@@ -152,7 +152,7 @@ export default class Project extends React.Component {
                                 <div className="card-text" style={styles.mtb5}>
                                     <List
                                         classNameList="list-group"
-                                        classNameItem="list-group-item shadow-sm mb-3 card__body"
+                                        classNameItem="list-group-item shadow-sm mb-3 card__body shadow__hover"
                                         data={data.task}
                                         style={styles.list}
                                     />
@@ -165,7 +165,7 @@ export default class Project extends React.Component {
                                     <div className="card-text" style={styles.mtb5}>
                                         <List
                                             classNameList="list-group"
-                                            classNameItem="list-group-item shadow-sm mb-3 card__body"
+                                            classNameItem="list-group-item shadow-sm mb-3 card__body shadow__hover"
                                             data={data.partners}
                                             style={styles.list}
                                         />
