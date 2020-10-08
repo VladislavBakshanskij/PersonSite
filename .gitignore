@@ -3,6 +3,9 @@
 /.pnp
 .pnp.js
 
+package-*
+yarn*
+
 # testing
 /coverage
 
