@@ -29,10 +29,8 @@ export default class App extends React.Component {
 	}
 
 	componentDidMount() {
-		this.interval = setInterval(() => this.onCheckPhone(), 1500);
-		this.setState({
-			isLoad: true
-		})
+		this.interval = setInterval(() => this.onCheckPhone(), 500);
+		this.setState({ isLoad: true });
 	}
 
 	componentWillMount() {
@@ -44,19 +42,19 @@ export default class App extends React.Component {
 	}
 
 	render() {
-		if (this.state.isLoad) { 
-			return (
+		return (
+			<>
+			{this.state.isLoad ? 
 				<Router>
 					<Header />
-					<Routes />
+					<Routes isPhone={this.state.isPhone} />
 					<Footer socialsLinks={Config.SOCIALLINKS} email={Config.EMAIL} />
 				</Router>
-			);
-		} else {
-			return (
+				:
 				<div>Loading...</div>
-			);
-		}
+			}
+			</>
+		);
 	}
 }
 

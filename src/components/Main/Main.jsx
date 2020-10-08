@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../Section/Section';
-import first from '../../static/img/first.jpeg';
+import MeImage from '../../static/img/first.jpeg';
 import Config from '../Config/Config';
 import Card from '../Card/Card';
 import List from '../List/List';
@@ -48,7 +48,8 @@ export default class Main extends React.Component {
         super(props);
         this.state = {
             isPhone: props.isPhone,
-            isLoad: false
+            isLoad: false,
+            imgSrc: MeImage
         };
     }
 
@@ -120,7 +121,7 @@ export default class Main extends React.Component {
                                                         <Card
                                                             title={section.title === "Мои проекты" ? <NavLink to="/projects" style={{ color: 'gray' }}>{section.title}</NavLink> : section.title}
                                                             content={section.content}
-                                                            imgSrc={isFirst ? first : ""}
+                                                            imgSrc={isFirst ? this.state.imgSrc : ""}
                                                             altImg={"Picture with me"}
                                                         />
                                                     </div>
@@ -128,7 +129,7 @@ export default class Main extends React.Component {
                                                 :sectionContentByDuraction(
                                                     section.title,
                                                     section.content,
-                                                    isFirst ? <img src={first} alt="Picture with me" className="shadow__hover"/> : section.stuff,
+                                                    isFirst ? <img className="shadow__hover" src={this.state.imgSrc} alt=""/> : section.stuff,
                                                     !isLeftContent
                                                 )
                                         }
@@ -139,7 +140,7 @@ export default class Main extends React.Component {
                         }
                         {
                             isPhone ?
-                                <div>
+                                <>
                                     <div className="row mb-3">
                                         <div className="col-12">
                                             {<cards.skills/>}
@@ -150,7 +151,7 @@ export default class Main extends React.Component {
                                             {<cards.works/>}
                                         </div>
                                     </div>
-                                </div>
+                                </>
                                 :
                                 <div className="row">
                                     <div className="col">
@@ -161,7 +162,7 @@ export default class Main extends React.Component {
                                     </div>
                                 </div>
                         }
-                    </div> : "Loading..."
+                    </div> : ""
                 }
             </main>
         );

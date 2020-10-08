@@ -25,7 +25,7 @@ export default function ProjectList() {
 
                     data={data.map((item) => {
                         return (
-                            <div key={item.id.toString()}>
+                            <React.Fragment key={item.id.toString()}>
                                 <a href={`${item.href}`} title={`${item.tech}`} style={{marginRight: 5, fontFamily: "'Montserrat', sans-serif"}}>
                                     {item.title}
                                 </a>
@@ -34,7 +34,7 @@ export default function ProjectList() {
                                         <i className="fa fa-arrow-right" aria-hidden="true"></i>
                                     </NavLink>
                                 }
-                            </div>
+                            </React.Fragment>
                         );
                     })}
                 />
