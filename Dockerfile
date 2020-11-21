@@ -1,16 +1,16 @@
 # build environment react
-FROM node:12 as react-build
+FROM node:15-alpine as react-build
 WORKDIR /app
 COPY . ./
 RUN npm install
 RUN npm run build
 
 # server environment
-FROM nginx:alpine
+FROM nginx:alpine as server
 COPY nginx.conf /etc/nginx/conf.d/configfile.template
 ENV PORT 8080
 ENV HOST 0.0.0.0
 RUN sh -c "envsubst '\$PORT'  < /etc/nginx/conf.d/configfile.template > /etc/nginx/conf.d/default.conf"
 COPY --from=react-build /app/build /usr/share/nginx/html
 EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon on;"]

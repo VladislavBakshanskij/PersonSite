@@ -23,10 +23,6 @@ export default class App extends React.Component {
 	onCheckPhone() {
 		const isPhone = window.innerWidth <= 600;
 
-		console.log("isPhone: ", isPhone);
-		console.log("state.isPhone: ", this.state.isPhone);
-		console.log("isPhone !== this.state.isPhone: ", isPhone !== this.state.isPhone);
-		
 		if (isPhone !== this.state.isPhone) {
 			this.setState({ isPhone: isPhone });
 		}

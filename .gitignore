@@ -5,7 +5,7 @@
 
 package-*
 yarn*
-
+yarn.lock
 # testing
 /coverage
 
