@@ -74,7 +74,11 @@ export default class Main extends React.Component {
                                 classNameItem="list-group-item mb-2 shadow card__body"
                                 styleItem={{ width: 'fit-content' }}
 
-                                data={["Отсутствуют"]}
+                                data={[
+                                    "Кубгау - Учебный мастер",
+                                    "Кубгау - PHP разработчик (Bitrix)",
+                                    "Кубгау - Software Engineer",
+                                ]}
                             />
                         }
                     />
