@@ -106,6 +106,18 @@ export default {
             href: '/',
             tech: 'Технологии: JS, CSS, Bootstrap, React, Git',
             name: 'personSite'
+        }, {
+            id: 9,
+            title: 'Api для взаимодействия с SMS-Activate',
+            href: 'https://github.com/Sms-activate/SMSActivateApi',
+            tech: 'Технологии: Java 8, Maven, GSON',
+            name: 'smsActivateApi'
+        }, {
+            id: 10,
+            title: 'Приложение для регулирование процессами',
+            href: '#',
+            tech: 'Технологии: Java 8, JavaFx',
+            name: 'smsActivateAdmin'
         }
     ]
 };
