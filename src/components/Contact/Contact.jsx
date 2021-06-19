@@ -7,8 +7,36 @@ import twitter from '../../static/img/Social/twitter.svg';
 import vk from '../../static/img/Social/vk.svg';
 import github from '../../static/img/Social/github.svg';
 import Config from '../Config/Config';
-import List from '../List/List';
+import {List} from '../List/List';
 import './Contact.css';
+
+
+const imgs = {
+	LinkedIn: {
+		picture: linkedin,
+		color: '#0077B7'
+	},
+	Twitter: {
+		picture: twitter,
+		color: '#03A8F3'
+	},
+	Instagram: {
+		picture: instagram,
+		color: '#F7504D'
+	},
+	Vk: {
+		picture: vk,
+		color: '#4D76A1'
+	},
+	Telegram: {
+		picture: telegram,
+		color: '#039BE5'
+	},
+	GitHub: {
+		picture: github,
+		color: 'black'
+	},
+};
 
 
 /**
@@ -34,33 +62,6 @@ export default class Contact extends React.Component {
 	componentDidMount() {
 		const contactLinks = this.state.contactLinks;
 
-		const imgs = {
-			LinkedIn: {
-				picture: linkedin,
-				color: '#0077B7'
-			},
-			Twitter: {
-				picture: twitter,
-				color: '#03A8F3'
-			},
-			Instagram: {
-				picture: instagram,
-				color: '#F7504D'
-			},
-			Vk: {
-				picture: vk,
-				color: '#4D76A1'
-			},
-			Telegram: {
-				picture: telegram,
-				color: '#039BE5'
-			},
-			GitHub: {
-				picture: github,
-				color: 'black'
-			},
-		};
-	
 		const data = contactLinks.map((link) => {
 			const logo = imgs[link.name];
 	

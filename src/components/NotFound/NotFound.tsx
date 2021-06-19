@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function NotFound() {
+export const NotFound: React.FC = () => {
     return (
         <main>
             <div className="container" style={{marginTop: 25, marginBottom: 25, bottom: "100%"}}>

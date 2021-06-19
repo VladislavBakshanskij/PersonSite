@@ -1,14 +1,16 @@
 import React from 'react';
 
 
-/**
- * Card section page
- * @param { body } props 
- */
-export default function Section(props) {
+interface SectionProps {
+    body: any
+}
+
+const Section: React.FC<SectionProps> = props => {
     return (
         <div className="mb-3">
             {props.body}
         </div>
     );
 }
+
+export default Section;
