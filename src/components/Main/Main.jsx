@@ -78,6 +78,7 @@ export default class Main extends React.Component {
                                     "Кубгау - Учебный мастер",
                                     "Кубгау - PHP разработчик (Bitrix)",
                                     "Кубгау - Software Engineer",
+                                    "SMS-Activate - Java Software Engineer",
                                 ]}
                             />
                         }
